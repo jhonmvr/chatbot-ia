@@ -1,0 +1,92 @@
+tarea,subtarea,tipo,analisis,implementacion,pruebas,total
+Arquitectura & Seguridad,"Definición de arquitectura de referencia (WA API, Backend, RAG, Panel)",Core IA,7.199999999999999,0.0,0.0,7.199999999999999
+,"ADR de decisiones técnicas (stack, LLM, vector DB, despliegue)",Core IA,4.8,0.0,0.0,4.8
+,Modelo de datos conversacional y de métricas,Core IA,3.5999999999999996,2.4,2.4,8.399999999999999
+,"Políticas de seguridad, PII y retención (DPA/consentimiento)",Core IA,4.8,2.4,2.4,9.6
+,"Plan de observabilidad (logs, métricas, alertas)",Core IA,3.5999999999999996,1.2,1.2,6.0
+Infraestructura,"Repositorios, CI/CD y plantillas de proyecto",Core IA,1.2,4.8,1.2,7.2
+,"Provisionamiento nube (containers, networking, secretos)",Core IA,1.2,9.6,2.4,13.2
+,"Base de datos transaccional (usuarios, citas, auditoría)",Core IA,2.4,7.199999999999999,2.4,12.0
+,"Vector DB (creación, índices, backups)",Core IA,2.4,7.199999999999999,2.4,12.0
+,Monitoreo y logging centralizado,Core IA,1.2,4.8,2.4,8.399999999999999
+,Backups y restauración (runbooks),Core IA,1.2,3.5999999999999996,2.4,7.2
+Integración WhatsApp,"Configuración WABA/Cloud API (números, verificación, tokens)",Core IA,2.4,7.199999999999999,2.4,12.0
+,Webhooks de recepción y envío; gestión de estados,Core IA,2.4,9.6,3.5999999999999996,15.6
+,Gestión de plantillas (templates) y categorías (Service/Authentication),Core IA,2.4,7.199999999999999,3.5999999999999996,13.2
+,"Ventana de servicio, rate limits y reintentos",Core IA,1.2,4.8,3.5999999999999996,9.599999999999998
+RAG,"Normalización y curación del contenido (FAQ, estandarizados, links)",Core IA,4.8,2.4,1.2,8.399999999999999
+,"Diseño de chunking, metadatos y políticas de actualización",Core IA,3.5999999999999996,2.4,1.2,7.199999999999999
+,Ingesta + embeddings iniciales (documentos base),Core IA,1.2,9.6,2.4,13.2
+,Búsqueda semántica y re-ranking; recall/precision tuning,Core IA,2.4,9.6,3.5999999999999996,15.6
+,Citado de fuentes y formato de respuesta,Core IA,1.2,3.5999999999999996,2.4,7.2
+,Actualización incremental/recrawl (jobs programados),Core IA,1.2,4.8,2.4,8.399999999999999
+Flujos,Bienvenida y horarios,Negocio/Personalización,1.2,3.5999999999999996,2.4,7.2
+,"Ubicación y enlaces oficiales (mapas, agenda)",Negocio/Personalización,1.2,2.4,1.2,4.8
+,"Agendamiento 1ª inspección (captura placa, fecha/hora)",Negocio/Personalización,2.4,7.199999999999999,3.5999999999999996,13.2
+,Reprogramación / Cancelación de citas,Negocio/Personalización,2.4,6.0,3.5999999999999996,12.0
+,Recordatorios automáticos (día previo y mismo día),Negocio/Personalización,2.4,4.8,2.4,9.6
+,Requisitos para RTV (propietario/tercero/empresa),Negocio/Personalización,2.4,4.8,2.4,9.6
+,Valores RTV por tipo de vehículo,Negocio/Personalización,1.2,3.5999999999999996,2.4,7.2
+,Trámites GAD: matriculación/traspasos/placas (orientación),Negocio/Personalización,2.4,4.8,2.4,9.6
+,Multas Quito: guía de anulación y enlaces,Negocio/Personalización,2.4,4.8,2.4,9.6
+,FUR: reimpresión y validaciones,Negocio/Personalización,2.4,4.8,2.4,9.6
+,Mensaje de ausencia (fuera de horario),Negocio/Personalización,1.2,2.4,1.2,4.8
+,Despedida / cierre con encuesta de satisfacción,Negocio/Personalización,1.2,2.4,1.2,4.8
+,Difusión masiva (horarios especiales/cortes de luz),Negocio/Personalización,2.4,4.8,2.4,9.6
+,Escalamiento a humano (cola y handoff),Core IA,2.4,6.0,3.5999999999999996,12.0
+,Detección de intención y manejo de contexto,Core IA,3.5999999999999996,9.6,4.8,18.0
+,"Políticas de seguridad en conversación (PII, bloqueos)",Core IA,2.4,4.8,2.4,9.6
+Panel,"Gestión de contenido (FAQ, plantillas) y versionado",Core IA,2.4,7.199999999999999,2.4,12.0
+,"Métricas y reportes (volumen, CSAT, tasa de resolución)",Core IA,2.4,7.199999999999999,2.4,12.0
+,"Gestión de usuarios y roles (admin, agente, analista)",Core IA,2.4,6.0,2.4,10.8
+,Auditoría y trazabilidad de conversaciones,Core IA,2.4,4.8,2.4,9.6
+Calidad & Despliegue,Pruebas unitarias y de integración,Core IA,1.2,7.199999999999999,12.0,20.4
+,Pruebas de carga y resiliencia (picos de mensajes),Core IA,1.2,4.8,9.6,15.599999999999998
+,UAT con negocio (afinamientos),Core IA,2.4,2.4,9.6,14.4
+,"Documentación, manuales y runbooks",Core IA,2.4,4.8,4.8,12.0
+,Go-live y soporte de estabilización (1ª semana),Core IA,1.2,3.5999999999999996,9.6,14.399999999999999
+Gestión de clientes,"Modelo de datos de cliente (perfil, atributos, consentimientos)",Core IA,3.5999999999999996,4.8,2.4,10.799999999999999
+,"CRUD de clientes (alta, edición, baja, búsqueda)",Core IA,1.2,7.199999999999999,3.5999999999999996,11.999999999999998
+,"Importación/Exportación CSV/Excel, deduplicación",Core IA,1.2,6.0,3.5999999999999996,10.799999999999999
+,"Segmentación por reglas (etiquetas, filtros, listas dinámicas)",Core IA,2.4,7.199999999999999,3.5999999999999996,13.2
+,Gestión de consentimientos y opt-in/opt-out (categorías WA),Core IA,2.4,6.0,3.5999999999999996,12.0
+,Historial de interacciones y timeline por cliente,Core IA,1.2,4.8,2.4,8.399999999999999
+Gestión de plantillas,Catálogo de plantillas (Marketing/Utility/Auth) con variables,Core IA,2.4,7.199999999999999,3.5999999999999996,13.2
+,"Localización y versiones (aprobación, estado, caducidad)",Core IA,2.4,6.0,3.5999999999999996,12.0
+,"Previsualización y prueba (placeholders, sandbox)",Core IA,1.2,4.8,2.4,8.399999999999999
+,Sincronización con WhatsApp (alta/baja/estado),Core IA,1.2,6.0,2.4,9.6
+Mensajería automatizada,"Motor de automatizaciones: disparadores por fecha, evento, segmento",Core IA,3.5999999999999996,9.6,4.8,18.0
+,"Programación y ventanas de silencio (quiet hours, timezones)",Core IA,1.2,7.199999999999999,2.4,10.799999999999999
+,"Personalización de mensajes (placeholders, reglas, plantillas)",Core IA,1.2,7.199999999999999,3.5999999999999996,11.999999999999998
+,"Campañas (batch), throttling y límites por minuto/cliente",Core IA,2.4,7.199999999999999,3.5999999999999996,13.2
+,Promos por cumpleaños (job diario) y recordatorios de mantenimiento,Negocio/Personalización,1.2,6.0,3.5999999999999996,10.799999999999999
+,A/B testing de contenidos y seguimiento de conversiones,Core IA,1.2,6.0,3.5999999999999996,10.799999999999999
+,Cálculo de costos por categoría y presupuesto mensual,Core IA,1.2,4.8,2.4,8.399999999999999
+Conversaciones & Handoff,"Bandeja de conversaciones (asignación, SLA, notas, etiquetas)",Core IA,2.4,9.6,4.8,16.799999999999997
+,"Hilo/log de conversación (origen IA vs humano, costos, estados)",Core IA,2.4,7.199999999999999,4.8,14.4
+,Tomar/ceder control: 'Agente toma control' y 'Volver a IA',Core IA,1.2,7.199999999999999,3.5999999999999996,11.999999999999998
+,Sugerencias de respuesta para agente (assistive AI),Core IA,2.4,6.0,3.5999999999999996,12.0
+,Resúmenes automáticos por conversación,Core IA,1.2,4.8,2.4,8.399999999999999
+Contexto IA,Perfilamiento de contexto: perfil cliente + últimas interacciones,Core IA,2.4,7.199999999999999,3.5999999999999996,13.2
+,Inyección de contexto en prompts (plantillas de sistema),Core IA,2.4,6.0,3.5999999999999996,12.0
+,"Redacción segura (enmascarado PII/secretos, guardrails)",Core IA,2.4,6.0,3.5999999999999996,12.0
+,Memoria conversacional con caducidad/olvido,Core IA,1.2,4.8,2.4,8.399999999999999
+Base de conocimiento (RAG),"CRUD de documentos (subida, tags, metadatos, idiomas)",Core IA,2.4,7.199999999999999,3.5999999999999996,13.2
+,Aprobación editorial y versionado de artículos,Core IA,2.4,6.0,3.5999999999999996,12.0
+,Ingesta automática desde conversaciones (Q&A mining),Core IA,2.4,7.199999999999999,3.5999999999999996,13.2
+,Reindexación programada y validación de calidad (coverage/precision),Core IA,1.2,7.199999999999999,3.5999999999999996,11.999999999999998
+,Métricas de respuesta con citas y trazabilidad de fuentes,Core IA,1.2,4.8,2.4,8.399999999999999
+Analítica & Costos,"Panel de campañas (entregados, leídos, clics, conversiones)",Core IA,1.2,7.199999999999999,2.4,10.799999999999999
+,Costos por categoría WA y por LLM (tokens) por cliente,Core IA,1.2,6.0,2.4,9.6
+,"KPIs de bot: FCR, deflexión, TMO, tiempo a primera respuesta",Core IA,1.2,6.0,2.4,9.6
+,Exportación de métricas (CSV/API) y data warehouse,Core IA,1.2,6.0,2.4,9.6
+Cumplimiento,Registro de consentimientos por canal/categoría y auditoría,Core IA,2.4,6.0,3.5999999999999996,12.0
+,Palabras clave de baja (STOP/BAJA) y listas DNC,Core IA,1.2,4.8,3.5999999999999996,9.599999999999998
+,Retención y anonimización; derecho de supresión,Core IA,2.4,4.8,2.4,9.6
+Integraciones,Conectores CRM/ERP (Salesforce/HubSpot/ERP mantenimiento),Negocio/Personalización,2.4,9.6,4.8,16.799999999999997
+,Webhooks entrantes/salientes y API pública segura,Core IA,2.4,8.4,3.5999999999999996,14.4
+,Importadores periódicos (CSV/S3/Drive) y mapeos,Negocio/Personalización,1.2,7.199999999999999,2.4,10.799999999999999
+Operación,"Scheduler distribuido y jobs críticos (idempotencia, reintentos)",Core IA,2.4,8.4,3.5999999999999996,14.4
+,"Gestión de errores y DLQ (dead-letter, replays)",Core IA,1.2,7.199999999999999,3.5999999999999996,11.999999999999998
+,"Gestión de capacidad por cliente (rate limit, cuotas, alertas)",Core IA,1.2,6.0,3.5999999999999996,10.799999999999999
+,,,,,,991.1999999999999
