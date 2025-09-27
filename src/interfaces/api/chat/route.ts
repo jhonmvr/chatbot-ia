@@ -3,10 +3,21 @@ import { VercelAIEmbedding } from "../../../infrastructure/embeddings/VercelAIEm
 import { QdrantVectorSearch } from "../../../infrastructure/vector/QdrantVectorSearch";
 import { VercelAIChat } from "../../../infrastructure/llm/VercelAIChat";
 import { ragChat } from "../../../application/chat/ragChat";
+import { verifyToken } from "../../../utils/auth";
 
 export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
+  const authHeader = req.headers.get('authorization');
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+  const token = authHeader.substring(7);
+  const user = verifyToken(token);
+  if (!user) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
   const { query, filters } = await req.json();
   const encoder = new TextEncoder();
   const stream = new ReadableStream({

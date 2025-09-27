@@ -35,4 +35,9 @@ export class QdrantVectorSearch implements VectorSearchPort {
     });
     return res as Array<{ id: string; score: number; payload: any }>;
   }
+
+  async createBackup(): Promise<string> {
+    const snapshot = await qdrant.createSnapshot(COLLECTION);
+    return snapshot.name;
+  }
 }
