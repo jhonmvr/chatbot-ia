@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register WhatsApp Number</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1173d4",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+            "foreground-light": "#1f2937",
+            "foreground-dark": "#e5e7eb",
+            "card-light": "#ffffff",
+            "card-dark": "#1f2937",
+            "border-light": "#e5e7eb",
+            "border-dark": "#374151",
+            "input-light": "#ffffff",
+            "input-dark": "#374151",
+            "placeholder-light": "#6b7280",
+            "placeholder-dark": "#9ca3af"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 28px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: .4s;
+      border-radius: 9999px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #1173d4;
+    }
+    input:focus + .slider {
+       box-shadow: 0 0 1px #1173d4;
+    }
+    input:checked + .slider:before {
+      transform: translateX(22px);
+    }
+    .bg-background-light {
+        background-color: #f6f7f8;
+    }
+    .dark .dark\:bg-background-dark {
+        background-color: #101922;
+    }
+    .text-foreground-light {
+        color: #1f2937;
+    }
+    .dark .dark\:text-foreground-dark {
+        color: #e5e7eb;
+    }
+    .bg-card-light {
+        background-color: #ffffff;
+    }
+    .dark .dark\:bg-card-dark {
+        background-color: #1f2937;
+    }
+    .border-border-light {
+        border-color: #e5e7eb;
+    }
+    .dark .dark\:border-border-dark {
+        border-color: #374151;
+    }
+    .bg-input-light {
+        background-color: #ffffff;
+    }
+    .dark .dark\:bg-input-dark {
+        background-color: #374151;
+    }
+    .placeholder-placeholder-light::placeholder {
+        color: #6b7280;
+    }
+    .dark .dark\:placeholder-placeholder-dark::placeholder {
+        color: #9ca3af;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="flex flex-col min-h-screen">
+<header class="bg-card-light dark:bg-card-dark border-b border-border-light dark:border-border-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary text-3xl"> all_inclusive </span>
+<h1 class="text-xl font-bold text-foreground-light dark:text-foreground-dark">Connectly</h1>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium text-foreground-light dark:text-foreground-dark hover:text-primary" href="#">Dashboard</a>
+<a class="text-sm font-medium text-foreground-light dark:text-foreground-dark hover:text-primary" href="#">Messages</a>
+<a class="text-sm font-medium text-foreground-light dark:text-foreground-dark hover:text-primary" href="#">Contacts</a>
+<a class="text-sm font-medium text-foreground-light dark:text-foreground-dark hover:text-primary" href="#">Campaigns</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="bg-primary/10 dark:bg-primary/20 text-primary p-2 rounded-full hover:bg-primary/20 dark:hover:bg-primary/30">
+<span class="material-symbols-outlined"> help </span>
+</button>
+<div class="w-10 h-10 bg-center bg-no-repeat aspect-square bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSvvxUysvQgBfugDP0FB8udVQ-k4nvZj0YrILjeGXJi6-TAfHtHf2RR-NVBj26tJZ9peC4b8CoMGY3xKS2FGKFbT1tv_7T_IZ85u2-oAgfhqJ1cHz_QRhnSK1wR5dH_zsZ6RWXR5lL2p2VCiVQWXK4Yo7MWe9PPpXVB2dfeUhW2iot2SnOXlMn7PGUUVbzDJtU6Ef5ztAspidA8XZG7J8_PfQqhZ8bQD4c4lkX9BevUbGZpJOkm873Z8RPA6pUj7nQ4vB0fusIPA");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-lg space-y-8">
+<div>
+<h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-foreground-light dark:text-foreground-dark">Register WhatsApp Number</h2>
+<p class="mt-2 text-center text-sm text-foreground-light/70 dark:text-foreground-dark/70">
+            Connect a new WhatsApp number to an existing client.
+          </p>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-lg shadow-md space-y-6">
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark" for="client">Client</label>
+<div class="mt-1 relative">
+<select class="appearance-none block w-full px-4 py-3 border border-border-light dark:border-border-dark bg-input-light dark:bg-input-dark text-foreground-light dark:text-foreground-dark placeholder-placeholder-light dark:placeholder-placeholder-dark rounded-DEFAULT shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" id="client" name="client">
+<option>Select an existing client</option>
+<option>Client A</option>
+<option>Client B</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-foreground-light dark:text-foreground-dark">
+<span class="material-symbols-outlined"> expand_more </span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark" for="channel">Channel</label>
+<input class="mt-1 block w-full px-4 py-3 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-foreground-light/70 dark:text-foreground-dark/70 rounded-DEFAULT shadow-sm sm:text-sm" id="channel" name="channel" readonly="" type="text" value="WhatsApp"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark" for="provider">Provider</label>
+<input class="mt-1 block w-full px-4 py-3 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-foreground-light/70 dark:text-foreground-dark/70 rounded-DEFAULT shadow-sm sm:text-sm" id="provider" name="provider" readonly="" type="text" value="META"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark" for="phone-number">E.164 Phone Number</label>
+<input class="mt-1 block w-full px-4 py-3 border border-border-light dark:border-border-dark bg-input-light dark:bg-input-dark text-foreground-light dark:text-foreground-dark placeholder-placeholder-light dark:placeholder-placeholder-dark rounded-DEFAULT shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" id="phone-number" name="phone-number" placeholder="+14155552671" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark" for="provider-sid">Provider SID</label>
+<input class="mt-1 block w-full px-4 py-3 border border-border-light dark:border-border-dark bg-input-light dark:bg-input-dark text-foreground-light dark:text-foreground-dark placeholder-placeholder-light dark:placeholder-placeholder-dark rounded-DEFAULT shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" id="provider-sid" name="provider-sid" placeholder="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" type="text"/>
+</div>
+<div class="flex items-center justify-between pt-4">
+<span class="text-sm font-medium text-foreground-light dark:text-foreground-dark">Is Active</span>
+<label class="switch">
+<input checked="" type="checkbox"/>
+<span class="slider bg-border-light dark:bg-border-dark"></span>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-foreground-light dark:text-foreground-dark">Is Default</span>
+<label class="switch">
+<input type="checkbox"/>
+<span class="slider bg-border-light dark:bg-border-dark"></span>
+</label>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row-reverse gap-4 pt-6">
+<button class="w-full inline-flex justify-center py-3 px-4 border border-transparent shadow-sm text-sm font-medium rounded-DEFAULT text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
+              Register Phone
+            </button>
+<button class="w-full inline-flex justify-center py-3 px-4 border border-border-light dark:border-border-dark shadow-sm text-sm font-medium rounded-DEFAULT text-foreground-light dark:text-foreground-dark bg-card-light dark:bg-card-dark hover:bg-background-light dark:hover:bg-background-dark/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50" type="button">
+              Cancel
+            </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

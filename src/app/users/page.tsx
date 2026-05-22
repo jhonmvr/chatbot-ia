@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useAuth, useClients } from '../../hooks';
 
 interface User {
   id: string;
@@ -16,128 +17,142 @@ export default function UsersPage() {
   const [loading, setLoading] = useState(true);
   const [form, setForm] = useState({ phone: '', name: '', consent: false });
   const [creating, setCreating] = useState(false);
+  const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
+    if (!isLoading && !isAuthenticated) {
       router.push('/login');
       return;
     }
-
-    fetchUsers();
-  }, [router]);
+    if (isAuthenticated) {
+      fetchUsers();
+    }
+  }, [isAuthenticated, isLoading, router]);
 
   const fetchUsers = async () => {
-    const token = localStorage.getItem('token');
-    const res = await fetch('/api/users', {
-      headers: { 'Authorization': `Bearer ${token}` },
-    });
-    const data = await res.json();
-    setUsers(data);
-    setLoading(false);
+    try {
+      const response = await fetch('/api/users', {
+        headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setUsers(data);
+      }
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
     setCreating(true);
-    const token = localStorage.getItem('token');
     try {
-      const res = await fetch('/api/users', {
+      const response = await fetch('/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
         body: JSON.stringify(form),
       });
-      if (res.ok) {
+      if (response.ok) {
         await fetchUsers();
         setForm({ phone: '', name: '', consent: false });
+        alert('Usuario creado exitosamente');
       } else {
-        alert('Failed to create user');
+        alert('Error al crear usuario');
       }
     } catch (error) {
-      alert('Error creating user');
+      alert('Error al crear usuario');
     }
     setCreating(false);
   };
 
-  if (loading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+  if (loading || isLoading) {
+    return (
+      <div style={{
+        display: 'flex',
+        minHeight: '100vh',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+      }}>
+        <style jsx>{`
+          @keyframes spin {
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{
+            width: '80px',
+            height: '80px',
+            border: '4px solid #667eea',
+            borderTopColor: 'transparent',
+            borderRadius: '50%',
+            animation: 'spin 1s linear infinite',
+            margin: '0 auto',
+          }}></div>
+          <p style={{ marginTop: '1rem', color: '#4a5568', fontSize: '1.125rem', fontWeight: '500' }}>Cargando usuarios...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <h1 className="text-3xl font-bold text-gray-900">Users</h1>
-            <Link href="/" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
-              Back to Dashboard
-            </Link>
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)' }}>
+      <header style={{
+        background: 'white',
+        borderBottom: '1px solid #e2e8f0',
+        boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+        padding: '1rem 1.5rem',
+      }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              borderRadius: '10px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <span style={{ fontSize: '1.25rem' }}>👤</span>
+            </div>
+            <h1 style={{
+              fontSize: '1.25rem',
+              fontWeight: '700',
+              color: '#1a202c',
+            }}>Gestión de Usuarios</h1>
           </div>
+          <a href="/" style={{
+            padding: '0.5rem 1rem',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            color: 'white',
+            fontSize: '0.875rem',
+            fontWeight: '600',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            cursor: 'pointer',
+          }}>
+            ← Dashboard
+          </a>
         </div>
       </header>
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div className="bg-white shadow rounded-lg p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4">Create New User</h2>
-          <form onSubmit={handleCreate} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Phone</label>
-              <input
-                type="text"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Name</label>
-              <input
-                type="text"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                required
-              />
-            </div>
-            <div>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={form.consent}
-                  onChange={(e) => setForm({ ...form, consent: e.target.checked })}
-                  className="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                />
-                <span className="ml-2 text-sm text-gray-700">Consent</span>
-              </label>
-            </div>
-            <button
-              type="submit"
-              disabled={creating}
-              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 disabled:opacity-50"
-            >
-              {creating ? 'Creating...' : 'Create User'}
-            </button>
-          </form>
-        </div>
-        <div className="bg-white shadow overflow-hidden sm:rounded-md">
-          <ul className="divide-y divide-gray-200">
-            {users.map(user => (
-              <li key={user.id}>
-                <div className="px-4 py-4 sm:px-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-lg font-medium text-gray-900">{user.name}</h3>
-                      <p className="mt-1 text-sm text-gray-500">Phone: {user.phone}</p>
-                      <p className="mt-1 text-sm text-gray-500">Consent: {user.consent ? 'Yes' : 'No'}</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+
+      <main style={{ maxWidth: '1280px', margin: '0 auto', padding: '2rem 1.5rem' }}>
+        <p style={{ fontSize: '1.125rem', color: '#4a5568', marginBottom: '2rem' }}>
+          Gestiona los usuarios del sistema.
+        </p>
       </main>
     </div>
   );

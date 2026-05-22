@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inbox</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1173d4",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+            "foreground-light": "#111827",
+            "foreground-dark": "#f9fafb",
+            "muted-light": "#6b7280",
+            "muted-dark": "#9ca3af",
+            "border-light": "#e5e7eb",
+            "border-dark": "#374151"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .group:hover .group-hover\:block {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex h-screen text-foreground-light dark:text-foreground-dark">
+<aside class="w-80 border-r border-border-light dark:border-border-dark flex flex-col">
+<div class="p-6">
+<h1 class="text-xl font-bold">Channels</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"></path>
+</svg>
+<span class="text-sm font-medium">WhatsApp</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark/50" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M236.88,26.19a9,9,0,0,0-9.16-1.57L25.06,103.93a14.22,14.22,0,0,0,2.43,27.21L80,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L173,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L239.77,35A9,9,0,0,0,236.88,26.19Zm-61.14,36L86.15,126.35l-49.6-9.73ZM96,200V152.52l24.79,21.74Zm87.53,8L100.85,135.5l119-85.29Z"></path>
+</svg>
+<span class="text-sm font-medium">Telegram</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark/50" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
+</svg>
+<span class="text-sm font-medium">Email</span>
+</a>
+</nav>
+</aside>
+<main class="flex-1 flex flex-col bg-white dark:bg-background-dark/50">
+<header class="p-6 border-b border-border-light dark:border-border-dark">
+<h2 class="text-2xl font-bold">Inbox</h2>
+</header>
+<div class="flex-1 overflow-y-auto">
+<ul class="divide-y divide-border-light dark:divide-border-dark">
+<li class="p-4 flex items-start gap-4 hover:bg-background-light dark:hover:bg-background-dark/50 cursor-pointer">
+<div class="relative">
+<span class="flex items-center justify-center rounded-full bg-background-light dark:bg-background-dark size-12 text-foreground-light dark:text-foreground-dark">
+<svg fill="currentColor" height="28" viewBox="0 0 256 256" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-49.84-29.8,48,48,0,1,0-59.84,0,79.66,79.66,0,0,0-49.84,29.8,88,88,0,1,1,159.52,0Z"></path></svg>
+</span>
+<div class="absolute bottom-0 right-0 bg-white dark:bg-background-dark p-0.5 rounded-full">
+<svg fill="#4ade80" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"></path></svg>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h3 class="font-semibold">Sarah Johnson</h3>
+<p class="text-xs text-muted-light dark:text-muted-dark">2 min ago</p>
+</div>
+<p class="text-sm text-muted-light dark:text-muted-dark mt-1 line-clamp-2">Hello, how can I help you today?</p>
+</div>
+</li>
+<li class="p-4 flex items-start gap-4 hover:bg-background-light dark:hover:bg-background-dark/50 cursor-pointer">
+<div class="relative">
+<span class="flex items-center justify-center rounded-full bg-background-light dark:bg-background-dark size-12 text-foreground-light dark:text-foreground-dark">
+<svg fill="currentColor" height="28" viewBox="0 0 256 256" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-49.84-29.8,48,48,0,1,0-59.84,0,79.66,79.66,0,0,0-49.84,29.8,88,88,0,1,1,159.52,0Z"></path></svg>
+</span>
+<div class="absolute bottom-0 right-0 bg-white dark:bg-background-dark p-0.5 rounded-full">
+<svg fill="#3b82f6" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M236.88,26.19a9,9,0,0,0-9.16-1.57L25.06,103.93a14.22,14.22,0,0,0,2.43,27.21L80,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L173,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L239.77,35A9,9,0,0,0,236.88,26.19Zm-61.14,36L86.15,126.35l-49.6-9.73ZM96,200V152.52l24.79,21.74Zm87.53,8L100.85,135.5l119-85.29Z"></path></svg>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h3 class="font-semibold">David Lee</h3>
+<p class="text-xs text-muted-light dark:text-muted-dark">15 min ago</p>
+</div>
+<p class="text-sm text-muted-light dark:text-muted-dark mt-1 line-clamp-2">Thank you for your message. We'll get back to you soon.</p>
+</div>
+</li>
+<li class="p-4 flex items-start gap-4 hover:bg-background-light dark:hover:bg-background-dark/50 cursor-pointer">
+<div class="relative">
+<span class="flex items-center justify-center rounded-full bg-background-light dark:bg-background-dark size-12 text-foreground-light dark:text-foreground-dark">
+<svg fill="currentColor" height="28" viewBox="0 0 256 256" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-49.84-29.8,48,48,0,1,0-59.84,0,79.66,79.66,0,0,0-49.84,29.8,88,88,0,1,1,159.52,0Z"></path></svg>
+</span>
+<div class="absolute bottom-0 right-0 bg-white dark:bg-background-dark p-0.5 rounded-full">
+<svg fill="#f97316" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path></svg>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h3 class="font-semibold">Emily Chen</h3>
+<p class="text-xs text-muted-light dark:text-muted-dark">30 min ago</p>
+</div>
+<p class="text-sm text-muted-light dark:text-muted-dark mt-1 line-clamp-2">Your order has been shipped.</p>
+</div>
+</li>
+<li class="p-4 flex items-start gap-4 hover:bg-background-light dark:hover:bg-background-dark/50 cursor-pointer">
+<div class="relative">
+<span class="flex items-center justify-center rounded-full bg-background-light dark:bg-background-dark size-12 text-foreground-light dark:text-foreground-dark">
+<svg fill="currentColor" height="28" viewBox="0 0 256 256" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-49.84-29.8,48,48,0,1,0-59.84,0,79.66,79.66,0,0,0-49.84,29.8,88,88,0,1,1,159.52,0Z"></path></svg>
+</span>
+<div class="absolute bottom-0 right-0 bg-white dark:bg-background-dark p-0.5 rounded-full">
+<svg fill="#4ade80" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"></path></svg>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h3 class="font-semibold">Michael Brown</h3>
+<p class="text-xs text-muted-light dark:text-muted-dark">1 hr ago</p>
+</div>
+<p class="text-sm text-muted-light dark:text-muted-dark mt-1 line-clamp-2">Can you provide more details about the product?</p>
+</div>
+</li>
+</ul>
+</div>
+</main>
+</div>
+
+</body></html>

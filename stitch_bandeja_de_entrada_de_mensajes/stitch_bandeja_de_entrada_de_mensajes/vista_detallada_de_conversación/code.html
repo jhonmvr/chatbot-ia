@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conversation View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "foreground-light": "#111418",
+                        "foreground-dark": "#f6f7f8",
+                        "subtle-light": "#617589",
+                        "subtle-dark": "#a0b3c6",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2734",
+                        "surface-accent-light": "#f0f2f4",
+                        "surface-accent-dark": "#2a3b4c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark">
+<div class="flex h-screen flex-col">
+<header class="flex items-center justify-between border-b border-surface-accent-light dark:border-surface-accent-dark px-6 py-3 shrink-0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">chat_bubble</span>
+<h1 class="text-xl font-bold">Sophia Clark</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-accent-light dark:hover:bg-surface-accent-dark">
+<span class="material-symbols-outlined">
+                        more_vert
+                    </span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-6">
+<div class="flex flex-col gap-6">
+<div class="flex items-end gap-3 max-w-xl">
+<div class="size-10 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAN2x2XwByJMuT8ZDprCCnf3Q_malI-pNR3uipRfeeSvXeGNyyVPStcRluPzPNTod-pYwyfNua6Mq_JyPjMRRhbNK0wTXH7rCVeV6KbOwpFSbeBlpGmWWDFbgT1a2grXScNm2_09aR3LHAJCqNQpe4JiLnhBro8PWAizpSw3kK-LRvdw596zDv455avq6F8kDfCE5Ob4jVOAhzEEZ3yTyMFun3txNgTVSrvshGijhBv04RDn2NOeQc7hbuWkaOR0R6l-RK02i0rHw");'></div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<p class="text-sm font-medium">Sophia Clark</p>
+<p class="text-xs text-subtle-light dark:text-subtle-dark">10:00 AM</p>
+</div>
+<div class="bg-surface-accent-light dark:bg-surface-accent-dark p-3 rounded-lg rounded-tl-none">
+<p class="text-base">Hi there! I'm interested in learning more about your product. Can you tell me about the key features and how it can help my business?</p>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-3 max-w-xl self-end">
+<div class="flex flex-col gap-1.5 items-end">
+<div class="flex items-center gap-2">
+<p class="text-sm font-medium">You</p>
+<p class="text-xs text-subtle-light dark:text-subtle-dark">10:01 AM</p>
+</div>
+<div class="bg-primary text-white p-3 rounded-lg rounded-tr-none">
+<p class="text-base">Hello Sophia, thanks for reaching out! Our product helps businesses manage customer messages from various channels like WhatsApp, Telegram, and email in one place. Key features include centralized inbox, automated responses, and analytics to track performance. How big is your business and what kind of customer interactions do you handle?</p>
+</div>
+</div>
+<div class="size-10 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApFQ1ZRWb8jRO2RdTpN9HWEvDLZcFfdTtcBbAD0FBbO9TG_6QUBn86oPRQ4lyyATiNmeG3q1WxnV2El9HGCtB8iWHIgbtfiHmO50yi524OmLzjyNlvGX3566orGmOT5e4arYjMquSWC_jutBvUh1VkyistgMaLE_e96cojHe9hDskeKRM6bPHMeidj72u8P9DvfImwfEyIJtjtaIKsG2gEZC4wIXE7mnoMLa3XYFbyEPCzLAPAugG4syuxUonSFFLvkvXfyToKGA");'></div>
+</div>
+<div class="flex items-end gap-3 max-w-xl">
+<div class="size-10 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCs-ALcQdyvWsZ8NlMB2ud-VPtFV4IysppzEsPBejraufYjdNUIxWdsxWUOmgeVMp6uUJ5yjDJHKbuB_Za-OaK9Uggy37hMdOJHC3fg0a5vgcTv73HhDwbdm1N6gn_q13ioUJrWxCsWC2kIDZQh8zJMW2wMp5i8oMRj94G-AXyK38jSH9mcXI9dZja3SHKrNDerJa0tCfOGfDDsFd133t0yNOszCoa2VgNqKG1Ercc-9Bb864FzSBF_GjyruBjdQ4fBJ-WwAmnX-g");'></div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<p class="text-sm font-medium">Sophia Clark</p>
+<p class="text-xs text-subtle-light dark:text-subtle-dark">10:05 AM</p>
+</div>
+<div class="bg-surface-accent-light dark:bg-surface-accent-dark p-3 rounded-lg rounded-tl-none">
+<p class="text-base">We're a small business with about 20 employees, and we handle around 500 customer interactions per week, mostly through WhatsApp and email.</p>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-3 max-w-xl self-end">
+<div class="flex flex-col gap-1.5 items-end">
+<div class="flex items-center gap-2">
+<p class="text-sm font-medium">You</p>
+<p class="text-xs text-subtle-light dark:text-subtle-dark">10:07 AM</p>
+</div>
+<div class="bg-primary text-white p-3 rounded-lg rounded-tr-none">
+<p class="text-base">That's great! Our platform is perfect for businesses of your size. With our centralized inbox, you can easily manage all your customer messages in one place, ensuring no message is missed. The automated responses feature can help you handle common queries quickly, saving you time and improving customer satisfaction. Plus, our analytics will give you insights into your customer interactions, helping you identify areas for improvement. Would you like to schedule a demo to see it in action?</p>
+</div>
+</div>
+<div class="size-10 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrLyTmi9juARoerFOaO0YQfZAepYSydgarvaVwl9qyba_z3f0zRBnVBGClFNdCjqzInK4OTX5HQr2JPFygqY5cC90twZhg3HUkn80x3O0tDoiew_WOSbmVKl7e6jNGMiumTTgY1PIG3viSZssvECgMius-DYsmtin2s_CZ4UYesr10FQ0pOhW_5dV0my-p7ZOUKzB0d7yueCeyrP14tHjfxfdgSG11r6kRDN9EEa470g-SqaAtisZZA38XMBjL4AAdh-xSvlQepQ");'></div>
+</div>
+</div>
+</main>
+<footer class="bg-surface-light dark:bg-surface-dark p-4 border-t border-surface-accent-light dark:border-surface-accent-dark">
+<div class="flex items-center gap-4">
+<div class="flex-1 relative">
+<input class="w-full bg-surface-accent-light dark:bg-surface-accent-dark border-none rounded-lg py-3 pl-4 pr-12 focus:ring-2 focus:ring-primary placeholder:text-subtle-light dark:placeholder:text-subtle-dark" placeholder="Type a message..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-subtle-light dark:text-subtle-dark hover:text-foreground-light dark:hover:text-foreground-dark">
+<span class="material-symbols-outlined">
+                            sentiment_satisfied
+                        </span>
+</button>
+</div>
+<button class="p-3 rounded-lg text-subtle-light dark:text-subtle-dark hover:bg-surface-accent-light dark:hover:bg-surface-accent-dark">
+<span class="material-symbols-outlined">
+                        attach_file
+                    </span>
+</button>
+<button class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                    Send
+                </button>
+</div>
+</footer>
+</div>
+
+</body></html>
